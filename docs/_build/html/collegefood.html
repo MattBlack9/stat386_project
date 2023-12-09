@@ -46,20 +46,52 @@
 <section id="module-collegefood.helper">
 <span id="collegefood-helper-module"></span><h2>collegefood.helper module<a class="headerlink" href="#module-collegefood.helper" title="Link to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="collegefood.helper.to_vector_of_strings">
-<span class="sig-prename descclassname"><span class="pre">collegefood.helper.</span></span><span class="sig-name descname"><span class="pre">to_vector_of_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_words</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.helper.to_vector_of_strings" title="Link to this definition">¶</a></dt>
-<dd><p>Converts into a vector of strings</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dataframe</strong> (<em>pandas dataframe</em>) – The dataframe used for …</p>
+<dt class="sig sig-object py" id="collegefood.helper.binary_to_string">
+<span class="sig-prename descclassname"><span class="pre">collegefood.helper.</span></span><span class="sig-name descname"><span class="pre">binary_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.helper.binary_to_string" title="Link to this definition">¶</a></dt>
+<dd><p>This functions changes a binary variable into string format</p>
+<dl>
+<dt>Parameters</dt><dd><p>dataframe: The dataframe you want to perform the function on</p>
+<p>column_name: The column in the dataframe to perform the fuction on</p>
+<p>string_one: The string value that is associated with the binary variable value 1</p>
+<p>string_two: The string value that is associated with the binary variable value 2</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>An array of</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>y</p>
+<dt>Returns</dt><dd><p>Does not return any values, but makes a new column in the dataset using the original column name + “_str”</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collegefood.helper.replace_with_synonym">
+<span class="sig-prename descclassname"><span class="pre">collegefood.helper.</span></span><span class="sig-name descname"><span class="pre">replace_with_synonym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">words_to_replace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.helper.replace_with_synonym" title="Link to this definition">¶</a></dt>
+<dd><p>This function uses a dictionary of synonyms to combine similar words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> – The dataframe you want to perform the function on</p></li>
+<li><p><strong>column_name</strong> – The column in the dataframe to perform the fuction on</p></li>
+<li><p><strong>words_to_replace</strong> – A dictionary with the words you want to replace. Format is ‘word_to_be_replace’ : ‘replacement_word’</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns</p>
+<blockquote>
+<div><p>This function returns a dataframe with the replaced values.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="collegefood.helper.to_vector_of_strings">
+<span class="sig-prename descclassname"><span class="pre">collegefood.helper.</span></span><span class="sig-name descname"><span class="pre">to_vector_of_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.helper.to_vector_of_strings" title="Link to this definition">¶</a></dt>
+<dd><p>Converts all the strings in a dataset’s column into a vector of strings. Useful if there are multiple strings in a single row.</p>
+<p>Parameters</p>
+<blockquote>
+<div><p>dataframe: The dataframe you want to perform the function on</p>
+<p>column_name: The column in the dataframe to perform the fuction on</p>
+</div></blockquote>
+<p>Returns</p>
+<blockquote>
+<div><p>An array of all the strings that are in the column</p>
+</div></blockquote>
 </dd></dl>
 
 </section>
@@ -81,6 +113,8 @@
 <li><a class="reference internal" href="#">collegefood package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-collegefood.helper">collegefood.helper module</a><ul>
+<li><a class="reference internal" href="#collegefood.helper.binary_to_string"><code class="docutils literal notranslate"><span class="pre">binary_to_string()</span></code></a></li>
+<li><a class="reference internal" href="#collegefood.helper.replace_with_synonym"><code class="docutils literal notranslate"><span class="pre">replace_with_synonym()</span></code></a></li>
 <li><a class="reference internal" href="#collegefood.helper.to_vector_of_strings"><code class="docutils literal notranslate"><span class="pre">to_vector_of_strings()</span></code></a></li>
 </ul>
 </li>
