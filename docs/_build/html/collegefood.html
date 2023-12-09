@@ -79,19 +79,22 @@
 </div></blockquote>
 </dd></dl>
 
+</section>
+<section id="module-collegefood.visualization">
+<span id="collegefood-visualization-module"></span><h2>collegefood.visualization module<a class="headerlink" href="#module-collegefood.visualization" title="Link to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="collegefood.helper.to_vector_of_strings">
-<span class="sig-prename descclassname"><span class="pre">collegefood.helper.</span></span><span class="sig-name descname"><span class="pre">to_vector_of_strings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.helper.to_vector_of_strings" title="Link to this definition">¶</a></dt>
-<dd><p>Converts all the strings in a dataset’s column into a vector of strings. Useful if there are multiple strings in a single row.</p>
-<p>Parameters</p>
-<blockquote>
-<div><p>dataframe: The dataframe you want to perform the function on</p>
+<dt class="sig sig-object py" id="collegefood.visualization.binary_to_string">
+<span class="sig-prename descclassname"><span class="pre">collegefood.visualization.</span></span><span class="sig-name descname"><span class="pre">binary_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string_two</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collegefood.visualization.binary_to_string" title="Link to this definition">¶</a></dt>
+<dd><p>This functions changes a binary variable into string format. This is meant to make a readable variable for data visualization.</p>
+<dl>
+<dt>Parameters</dt><dd><p>dataframe: The dataframe you want to perform the function on</p>
 <p>column_name: The column in the dataframe to perform the fuction on</p>
-</div></blockquote>
-<p>Returns</p>
-<blockquote>
-<div><p>An array of all the strings that are in the column</p>
-</div></blockquote>
+<p>string_one: The string value that is associated with the binary variable value 1</p>
+<p>string_two: The string value that is associated with the binary variable value 2</p>
+</dd>
+<dt>Returns</dt><dd><p>Does not return any values, but makes a new column in the dataset using the original column name + “_str”</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -115,7 +118,10 @@
 <li><a class="reference internal" href="#module-collegefood.helper">collegefood.helper module</a><ul>
 <li><a class="reference internal" href="#collegefood.helper.binary_to_string"><code class="docutils literal notranslate"><span class="pre">binary_to_string()</span></code></a></li>
 <li><a class="reference internal" href="#collegefood.helper.replace_with_synonym"><code class="docutils literal notranslate"><span class="pre">replace_with_synonym()</span></code></a></li>
-<li><a class="reference internal" href="#collegefood.helper.to_vector_of_strings"><code class="docutils literal notranslate"><span class="pre">to_vector_of_strings()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-collegefood.visualization">collegefood.visualization module</a><ul>
+<li><a class="reference internal" href="#collegefood.visualization.binary_to_string"><code class="docutils literal notranslate"><span class="pre">binary_to_string()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-collegefood">Module contents</a></li>

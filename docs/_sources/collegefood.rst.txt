@@ -12,6 +12,14 @@ collegefood.helper module
    :undoc-members:
    :show-inheritance:
 
+collegefood.visualization module
+--------------------------------
+
+.. automodule:: collegefood.visualization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
