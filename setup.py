@@ -11,10 +11,9 @@ setup(
     version='0.0.1',                                   
     description = 'Package to aid in the analysis of a dataset found on https://www.kaggle.com/datasets/borapajo/food-choices',            # Describe your package
     author = 'Matthew Jensen, Matthew Blackley',                             
-    author_email = 'mj838@byu.edu',               
+    author_email = 'mj638@byu.edu',               
     url = 'git@github.com:MattBlack9/stat386_project.git',  
-    packages = find_packages(exclude = ['helper.py', 
-                                        'visualization.py']),  
+    packages = find_packages(),  
                                                         # Automatically find all packages
     install_requires = requirements,                    # Package dependences
     classifiers = [                                     # Add package classifiers (OPTIONAL)
@@ -29,6 +28,6 @@ setup(
     ],
     long_description = long_description,                # Use README content as long_description
     long_description_content_type = 'text/markdown',    # Specify the content type
-    package_data = {'collegefood': ['STAT386_PROJECT/college_food.csv']}, # Dataset to include in package
+    #package_data = {'collegefood': ['STAT386_PROJECT/college_food.csv']}, # Dataset to include in package
 )
 

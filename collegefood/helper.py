@@ -17,7 +17,7 @@ def to_vector_of_strings(dataframe, column_name):
 
     Returns
 
-        An array of all the strings that are in the column
+        An array of all the strings that are every row of the column
 
     """
     # Split words using commas and periods
