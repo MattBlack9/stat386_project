@@ -19,6 +19,19 @@ def drop_columns(dataframe, columns_to_drop):
     dataframe = dataframe.drop(columns=columns_to_drop, errors='ignore')
     return dataframe
 
+def keep_columns(dataframe, columns_to_keep):
+    """
+    Drops specified columns from a DataFrame.
+
+    Parameters:
+        dataframe (pd.DataFrame): The input DataFrame.
+        columns_to_keep (list): List of column names to keep.
+
+    Returns:
+        pd.DataFrame: DataFrame with specified columns you want to keep.
+    """
+    return dataframe.loc[:, columns_to_keep]
+
 def cleaning_col(column,type,data):
     """
     Converts specified column to new data type and deleting observations that do not apply
