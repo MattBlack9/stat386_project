@@ -13,11 +13,15 @@ for documentation visit [file:///C:/Users/mattj/Documents/STATHW/STAT386/Final%2
 
 clean_data.py - a script that inputs the raw data and outputs a clean dataset for analysis
 
-test-ipynb - a notebook that runs a test using functions from the collegefood package to ensure they work properly
+test_ipynb - a notebook that runs a test using functions from the collegefood package to ensure they work properly
 
 demo.ipynb - a notebook showcasing a few functions in the collegefood package and how to use them to clean data and make visualization.
 
 setup.py - a setup script used for installation
 
 requirements.txt - text file of all the packages required to download this package
+
+college_food.csv - the original dataset from kaggle
+
+food_cleaned.csv - the clean dataset used in analysis after running clean_data.py
 
