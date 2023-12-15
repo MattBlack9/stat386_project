@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>collegefood.visualization &#8212; Final Project 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/groundwork.css?v=594d7a89" />
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Final Project 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">collegefood.visualization</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for collegefood.visualization</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="binary_to_string">
+<a class="viewcode-back" href="../../collegefood.html#collegefood.visualization.binary_to_string">[docs]</a>
+<span></span><span class="k">def</span> <span class="nf">binary_to_string</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">string_one</span><span class="p">,</span> <span class="n">string_two</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This functions changes a binary variable into string format. This is meant to make a readable variable for data visualization.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        dataframe: The dataframe you want to perform the function on</span>
+<span class="sd">        column_name(string): In string format, the column in the dataframe to perform the fuction on</span>
+<span class="sd">        string_one(string): The string value that is associated with the binary variable value 1</span>
+<span class="sd">        string_two(string): The string value that is associated with the binary variable value 2</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Does not return any values, but makes a new column in the dataset using the original column name + &quot;_str&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="n">string_one</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="n">string_two</span><span class="p">}</span>
+    <span class="n">dataset</span><span class="p">[</span><span class="n">column_name</span> <span class="o">+</span> <span class="s1">&#39;_str&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="to_vector_of_strings">
+<a class="viewcode-back" href="../../collegefood.html#collegefood.visualization.to_vector_of_strings">[docs]</a>
+<span class="k">def</span> <span class="nf">to_vector_of_strings</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">column_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts all the strings in a dataset&#39;s column into a vector of strings. Useful if there are multiple strings in a single row.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        dataframe: The dataframe you want to perform the function on</span>
+<span class="sd">        column_name(string): The column in the dataframe to perform the fuction on</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Array: An array of all the strings that are every row of the column</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Split words using commas and periods</span>
+    <span class="n">words_list</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="c1"># Create a new DataFrame with a row for each word</span>
+    <span class="n">vector_of_words</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_word&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">column_name</span><span class="p">):</span> <span class="n">words_list</span>
+    <span class="p">})</span>
+    
+    <span class="k">return</span> <span class="n">vector_of_words</span></div>
+
+
+
+
+<div class="viewcode-block" id="replace_with_synonym">
+<a class="viewcode-back" href="../../collegefood.html#collegefood.visualization.replace_with_synonym">[docs]</a>
+<span class="k">def</span> <span class="nf">replace_with_synonym</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">words_to_replace</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function uses a dictionary of synonyms to combine similar words.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        dataframe: The dataframe you want to perform the function on</span>
+<span class="sd">        column_name(string): The column in the dataframe to perform the fuction on</span>
+<span class="sd">        words_to_replace(dictionary): A dictionary with the words you want to replace. Format is &#39;word_to_be_replace&#39; : &#39;replacement_word&#39;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dataframe: This function returns a dataframe with the replaced values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Replace words using the specified mapping</span>
+    <span class="k">for</span> <span class="n">original_word</span><span class="p">,</span> <span class="n">replacement_word</span> <span class="ow">in</span> <span class="n">words_to_replace</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">dataframe</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">original_word</span><span class="p">,</span> <span class="n">replacement_word</span><span class="p">)</span>
+
+    <span class="c1"># Group and sum the occurrences of each word</span>
+    <span class="n">grouped_data</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">grouped_data</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Final Project 1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">collegefood.visualization</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Matthew Jensen, Matthew Blackley.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
