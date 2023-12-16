@@ -6,8 +6,7 @@ We created the package collegefood to house custom functions that we made in the
 Install via pip install git+https://github.com/MattBlack9/stat386_project
 
 # Documentation
-for documentation visit [file:///C:/Users/mattj/Documents/STATHW/STAT386/Final%20Project/stat386_project/docs/_build/html/collegefood.html
-](https://mattblack9.github.io/stat386_project/)https://mattblack9.github.io/stat386_project/
+for documentation visit (https://mattblack9.github.io/stat386_project/)https://mattblack9.github.io/stat386_project/
 
 # Repository Contents:
 
